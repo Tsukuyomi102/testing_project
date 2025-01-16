@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     // Запуск тестов
-                    sh 'python -m unittest test_app.py'
+                    sh 'python3 -m unittest test_app.py'
                 }
             }
         }
