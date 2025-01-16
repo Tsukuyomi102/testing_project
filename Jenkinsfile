@@ -1,10 +1,11 @@
 pipeline {
     agent any
+    stages {
         stage('Test') {
             steps {
                 script {
                     // Запуск тестов
-                    python -m unittest test_app.py
+                    sh 'python -m unittest test_app.py'
                 }
             }
         }
