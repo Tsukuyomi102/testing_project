@@ -1,20 +1,10 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                script {
-                    // Сборка Docker образа
-                    sh 'docker build -t my_app .'
-                }
-            }
-        }
         stage('Test') {
             steps {
                 script {
                     // Запуск тестов
-                    sh 'docker run --rm my_app'
+                    python -m unittest test_app.py
                 }
             }
         }
